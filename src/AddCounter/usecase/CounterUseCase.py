@@ -11,7 +11,7 @@ from datetime import datetime
 class CounterUseCase(UseCase):
     def __init__(self, repository: Repository):
         self._repository = repository
-        self._task_runner = PeriodicTaskRunner(NetworkWorker.get_search_ref, self.update_instance, time_delay=10)
+        self._task_runner = PeriodicTaskRunner(NetworkWorker.get_search_ref, self.update_instance)
 
     async def add_instance(self, instance: AddInput, back_tasks: BackgroundTasks) -> (int, bool):
         if not instance.search_path or not instance.region:
