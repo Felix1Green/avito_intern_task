@@ -1,5 +1,3 @@
-SET timezone ='+3';
-
 create table Advertisement
 (
     ADD_ID SERIAL PRIMARY KEY,
